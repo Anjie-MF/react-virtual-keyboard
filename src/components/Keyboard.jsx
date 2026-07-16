@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-export default function OnScreenKeyboard() {
+export default function ReactKeyboard() {
 
     const [isDisabled, setIsDisabled] = useState(false);
 
@@ -26,7 +26,7 @@ export default function OnScreenKeyboard() {
                 return;
             }
             else if (event.key === 'Enter') {
-                handleClick('Guess');
+                handleClick('Enter');
                 console.log('Guess entered ');
             }
             else if (event.key === 'Backspace') {
@@ -51,7 +51,7 @@ export default function OnScreenKeyboard() {
                 className={`keyboard-toggle ${isDisabled ? "disabled" : ""}`}
                 onClick={toggleState}
             >
-                {isDisabled ? "Physical Keyboard Disabled" : "Physical Keyboard Enabled"}
+                {isDisabled ? "Physical Keyboard Off" : "Physical Keyboard On"}
             </button>
 
             <div className="keyboard-rows">
