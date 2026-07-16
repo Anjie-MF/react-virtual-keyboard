@@ -41,6 +41,8 @@ This project strengthened my understanding of:
 - Custom themes
 - Enhanced mobile support
 
----
+## Resource Links
 
-Created by **Anjelica** as part of my front-end development portfolio.
+- https://medium.com/@luwen900131/react-props-and-callback-prop-23a8c5134b6b
+
+
