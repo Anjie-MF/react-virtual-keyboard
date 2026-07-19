@@ -5,7 +5,7 @@ export default function ReactKeyboard({ onKeyPressed, isDisabled, onClick }) {
     const keyboardLayout = [
         ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
         ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-        ['Enter', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Backspace']
+        ['Clear', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Backspace']
     ];
 
     function handleClick(incomingKey) {
@@ -17,8 +17,8 @@ export default function ReactKeyboard({ onKeyPressed, isDisabled, onClick }) {
             if (isDisabled) {
                 alert("Physical Keyboard not in use. Use Mouse!");
             }
-            else if (event.key === 'Enter') {
-                handleClick('Enter');
+            else if (event.key === 'Escape') {
+                handleClick('Clear');
             }
             else if (event.key === 'Backspace') {
                 handleClick('Backspace');
