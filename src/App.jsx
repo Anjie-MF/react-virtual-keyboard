@@ -5,10 +5,18 @@ import './index.css';
 
 
 export default function TypedText() {
-    const [text, setText] = useState("");
 
+    const [isDisabled, setIsDisabled] = useState(false);
+    const toggleState = () => {
+        setIsDisabled(prev => !prev);
+    };
+
+    const [text, setText] = useState("");
     function handleChange(e) {
         setText(e.target.value);
+    }
+    function handleKey(incomingKey) {
+        setText((prevText) => prevText + incomingKey);
     }
 
     return (
@@ -16,7 +24,9 @@ export default function TypedText() {
             <h1>React Virtual Keyboard with Physical Support Feature</h1>
             <h2>Go ahead and type a message</h2>
             <input value={text} onChange={handleChange} />
-            <ReactKeyboard />
+            <ReactKeyboard
+                onClick={toggleState}
+                onKeyPressed={handleKey} />
         </div>
     )
 }
