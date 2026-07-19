@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function ReactKeyboard({ onKeyPressed }) {
+export default function ReactKeyboard({ onKeyPressed, isDisabled, onClick }) {
 
     const keyboardLayout = [
         ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
@@ -41,7 +41,7 @@ export default function ReactKeyboard({ onKeyPressed }) {
         <div className="keyboard-container">
             <button
                 className={`keyboard-toggle ${isDisabled ? "disabled" : ""}`}
-                onClick={toggleState}
+                onClick={onClick}
             >
                 {isDisabled ? "Physical Keyboard Off" : "Physical Keyboard On"}
             </button>
