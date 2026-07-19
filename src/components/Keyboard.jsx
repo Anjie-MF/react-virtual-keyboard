@@ -8,15 +8,14 @@ export default function ReactKeyboard({ onKeyPressed, isDisabled, onClick }) {
         ['Enter', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Backspace']
     ];
 
-    function handleClick(key) {
-        onKeyPressed(key);
+    function handleClick(incomingKey) {
+        onKeyPressed(incomingKey);
     }
 
     useEffect(() => {
         const whenKeyIsPressed = (event) => {
             if (isDisabled) {
-                alert('Physical Keyboard not in use. Use Mouse!');
-                return;
+                alert("Physical Keyboard not in use. Use Mouse!");
             }
             else if (event.key === 'Enter') {
                 handleClick('Enter');
