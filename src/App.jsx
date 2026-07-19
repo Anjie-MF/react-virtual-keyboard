@@ -29,14 +29,17 @@ export default function TypedText() {
     };
 
     return (
-        <div>
-            <h1>Virtual Keyboard feat. Physical Support</h1>
-            <h2>Go ahead and type your masterpiece!</h2>
-            <textarea value={text} onChange={handleChange} disabled={isDisabled} />
-            <ReactKeyboard
-                isDisabled={isDisabled}
-                onClick={toggleState}
-                onKeyPressed={handleKey} />
-        </div>
+        <main>
+            <div>
+                <h1>Virtual Keyboard feat. Physical Support</h1>
+                <h2>Go ahead and type your masterpiece!</h2>
+                <textarea value={text} onChange={handleChange} disabled={isDisabled} />
+                <ReactKeyboard
+                    isDisabled={isDisabled}
+                    onClick={toggleState}
+                    onKeyPressed={handleKey} />
+            </div>
+        </main>
+
     )
 }
