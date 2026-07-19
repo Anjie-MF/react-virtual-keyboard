@@ -15,16 +15,14 @@ export default function ReactKeyboard({ onKeyPressed, isDisabled, onClick }) {
     useEffect(() => {
         const whenKeyIsPressed = (event) => {
             if (isDisabled) {
-                console.log('Physical Keyboard not in use.');
+                alert('Physical Keyboard not in use. Use Mouse!');
                 return;
             }
             else if (event.key === 'Enter') {
                 handleClick('Enter');
-                console.log('Guess entered ');
             }
             else if (event.key === 'Backspace') {
                 handleClick('Backspace');
-                console.log('Letter was deleted')
             }
             if ((/^[a-zA-Z]$/.test(event.key))) {
                 handleClick(event.key.toUpperCase());
