@@ -17,6 +17,7 @@ export default function ReactKeyboard({ onKeyPressed, isDisabled, onClick }) {
         const whenKeyIsPressed = (event) => {
             if (isDisabled) {
                 alert("The physical keyboard is off. Use Mouse!");
+                return;
             }
             else if (event.key === 'Escape') {
                 handleClick('Clear');
@@ -27,7 +28,7 @@ export default function ReactKeyboard({ onKeyPressed, isDisabled, onClick }) {
             else if (event.key === 'Backspace') {
                 handleClick('Backspace');
             }
-            if ((/^[a-zA-Z]$/.test(event.key))) {
+            else if ((/^[a-zA-Z]$/.test(event.key))) {
                 handleClick(event.key.toUpperCase());
             }
         }
