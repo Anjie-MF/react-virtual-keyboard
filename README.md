@@ -45,6 +45,6 @@ This project strengthened my understanding of:
 
 - https://medium.com/@luwen900131/react-props-and-callback-prop-23a8c5134b6b
 - https://tajammalmaqbool.com/blogs/javascript-remove-last-character
-
+- https://jabaltorres.com/blog/common-git-message-prefixes/
 
 
