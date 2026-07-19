@@ -15,8 +15,7 @@ Rather than leaving it tied to a single game, I redesigned it as a reusable Reac
 
 ## Screenshot
 
-![React Virtual Keyboard](./assets/virtual-keyboard.png)
-
+![React Virtual Keyboard](./src/assets/virtual-keyboard.png)
 ---
 
 ## Features
