@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function ReactKeyboard() {
-
-    const [isDisabled, setIsDisabled] = useState(false);
-
-    const toggleState = () => {
-        setIsDisabled(prev => !prev);
-    };
+export default function ReactKeyboard({ onKeyPressed }) {
 
     const keyboardLayout = [
         ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
@@ -15,7 +9,7 @@ export default function ReactKeyboard() {
     ];
 
     function handleClick(key) {
-        console.log({ key });
+        onKeyPressed(key);
     }
 
     useEffect(() => {
@@ -34,7 +28,6 @@ export default function ReactKeyboard() {
             }
             if ((/^[a-zA-Z]$/.test(event.key))) {
                 handleClick(event.key.toUpperCase());
-                console.log('Key was pressed');
             }
         }
         window.addEventListener('keydown', whenKeyIsPressed);
