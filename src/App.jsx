@@ -22,7 +22,7 @@ export default function TypedText() {
         <div>
             <h1>React Virtual Keyboard with Physical Support Feature</h1>
             <h2>Go ahead and type a message</h2>
-            <input value={text} onChange={handleChange} />
+            <input value={text} onChange={handleChange} disabled={isDisabled} />
             <ReactKeyboard
                 isDisabled={isDisabled}
                 onClick={toggleState}
