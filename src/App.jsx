@@ -19,6 +19,8 @@ export default function TypedText() {
             setText((prevText) => prevText.slice(0, -1));
         } else if (incomingKey === "Clear") {
             setText("");
+        } else if (incomingKey === 'Space') {
+            setText((prevText) => prevText + ' ');
         } else {
             setText((prevText) => prevText + incomingKey);
         }
