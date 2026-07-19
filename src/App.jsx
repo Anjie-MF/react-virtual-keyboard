@@ -33,6 +33,7 @@ export default function TypedText() {
             <div>
                 <h1>Virtual Keyboard feat. Physical Support</h1>
                 <h2>Go ahead and type your masterpiece!</h2>
+                <label htmlFor="message-input" className="sr-only">Message input</label>
                 <textarea value={text} onChange={handleChange} disabled={isDisabled} />
                 <ReactKeyboard
                     isDisabled={isDisabled}
