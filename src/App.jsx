@@ -12,7 +12,9 @@ export default function TypedText() {
 
     const [text, setText] = useState("");
     function handleChange(e) {
-        setText(e.target.value);
+        setText(e.target.value)
+        e.target.style.height = "auto";
+        e.target.style.height = e.target.scrollHeight + "px";
     }
     function handleKey(incomingKey) {
         if (incomingKey === "Backspace") {
@@ -28,9 +30,9 @@ export default function TypedText() {
 
     return (
         <div>
-            <h1>React Virtual Keyboard with Physical Support Feature</h1>
-            <h2>Go ahead and type a message</h2>
-            <input value={text} onChange={handleChange} disabled={isDisabled} />
+            <h1>Virtual Keyboard feat. Physical Support</h1>
+            <h2>Go ahead and type your masterpiece!</h2>
+            <textarea value={text} onChange={handleChange} disabled={isDisabled} />
             <ReactKeyboard
                 isDisabled={isDisabled}
                 onClick={toggleState}
