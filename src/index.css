@@ -1,64 +1,163 @@
-   /* ----------------------------------------
-     Keyboard CSS
-  ---------------------------------------- */
-   .keyboard-container {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       gap: 10px;
-       padding: 10px;
-       background-color: #101416;
-       color: #e0e3e5;
-       font-family: sans-serif;
-   }
+/* ----------------------------------------
+   Virtual Keyboard — Garnet & Verdigris
+   ---------------------------------------- */
 
-   .keyboard-rows {
-       display: flex;
-       flex-direction: column;
-       gap: 12px;
-       width: 100%;
-       border-radius: 8px;
-       max-width: 500px;
-       background-color: #1c2022;
-   }
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Space+Grotesk:wght@400;500;700&display=swap');
 
-   .keyboard-row {
-       display: flex;
-       justify-content: center;
-       gap: 5px;
-       width: 100%;
-   }
+:root {
+    --kb-font-heading: 'Fraunces', serif;
+    --kb-font-body: 'Space Grotesk', sans-serif;
 
-   .keyboard-key {
-       flex: 1;
-       height: 48px;
-       border: 1px solid #8b9386;
-       border-radius: 5px;
-       background-color: #313537;
-       color: #e0e3e5;
-       font-size: 1rem;
-       font-weight: bold;
-       text-transform: uppercase;
-       cursor: pointer;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-   }
+    --kb-bg: #4A1B3D;
+    --kb-key: #6B2C5C;
+    --kb-key-shadow: #2A0F22;
+    --kb-text: #F0E4D3;
+    --kb-accent: #3D9C82;
+    --kb-accent-text: #0F2A22;
+    --kb-copper: #C08A4E;
+    --kb-copper-text: #3A2408;
+    --kb-disabled: #5C2248;
+    --kb-disabled-text: #A98BA0;
+}
 
-   .keyboard-key:hover,
-   .keyboard-key:active {
-       background-color: #94d78c;
-       color: #003908;
-   }
+body {
+    font-family: var(--kb-font-body);
+}
 
-   .keyboard-toggle {
-       background: #262b2c;
-       color: #e0e3e5;
-       transition: 0.2s ease;
-   }
+h1 {
+    font-family: var(--kb-font-heading);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 2.25rem;
+    color: var(--kb-bg);
+    text-align: center;
+}
 
-   .keyboard-toggle.disabled {
-       background: #1c2022;
-       color: #8b9386;
-       cursor: not-allowed;
-   }
+h2 {
+    font-family: var(--kb-font-body);
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: #6a6a6a;
+    text-align: center;
+}
+
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+    background-color: var(--kb-bg);
+    color: var(--kb-text);
+    font-family: var(--kb-font-body);
+    border-radius: 12px;
+}
+
+.keyboard-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 520px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.keyboard-key {
+    flex: 1;
+    height: 52px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--kb-key);
+    color: var(--kb-text);
+    font-family: var(--kb-font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 0 var(--kb-key-shadow);
+    transform: translateY(0);
+    transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.15s ease;
+}
+
+.keyboard-key:hover {
+    background-color: var(--kb-accent);
+    color: var(--kb-accent-text);
+}
+
+.keyboard-key:active {
+    background-color: var(--kb-accent);
+    color: var(--kb-accent-text);
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--kb-key-shadow);
+}
+
+.keyboard-toggle {
+    padding: 10px 20px;
+    border: 2px solid var(--kb-copper);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--kb-copper);
+    font-family: var(--kb-font-body);
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.keyboard-toggle:hover {
+    background: var(--kb-copper);
+    color: var(--kb-copper-text);
+}
+
+.keyboard-toggle.disabled {
+    border-color: var(--kb-disabled);
+    background: var(--kb-disabled);
+    color: var(--kb-disabled-text);
+    cursor: not-allowed;
+}
+
+.keyboard-toggle.disabled:hover {
+    background: var(--kb-disabled);
+    color: var(--kb-disabled-text);
+}
+
+/* ----------------------------------------
+   Input field
+   ---------------------------------------- */
+
+textarea {
+    display: block;
+    margin: 0 auto 24px auto;
+    min-height: 56px;
+    width: 100%;
+    max-width: 520px;
+    padding: 0 20px;
+    font-size: 1.25rem;
+    border: 2px solid var(--kb-key);
+    border-radius: 8px;
+    background-color: var(--kb-text);
+    color: var(--kb-bg);
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--kb-accent);
+}
+
+textarea:disabled {
+    background-color: #E8F4F0;
+    color: var(--kb-bg);
+    border-color: var(--kb-accent);
+    cursor: default;
+    opacity: 1;
+}
