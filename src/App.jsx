@@ -15,8 +15,12 @@ export default function TypedText() {
         setText(e.target.value);
     }
     function handleKey(incomingKey) {
-        setText((prevText) => prevText + incomingKey);
-    }
+        if (incomingKey === "Backspace") {
+            setText((prevText) => prevText.slice(0, -1));
+        } else {
+            setText((prevText) => prevText + incomingKey);
+        }
+    };
 
     return (
         <div>
