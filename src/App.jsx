@@ -17,6 +17,8 @@ export default function TypedText() {
     function handleKey(incomingKey) {
         if (incomingKey === "Backspace") {
             setText((prevText) => prevText.slice(0, -1));
+        } else if (incomingKey === "Clear") {
+            setText("");
         } else {
             setText((prevText) => prevText + incomingKey);
         }
